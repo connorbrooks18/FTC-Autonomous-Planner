@@ -1,5 +1,5 @@
 ## Credit
-*Created by Connor Brooks of FTC team #8672 from Bettendorf, IA*\
+*Created by Connor Brooks of FTC team #8672 from Bettendorf, IA*
 
 ## USES:
 - Brainstorm autonomous pathing
