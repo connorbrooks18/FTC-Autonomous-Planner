@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import math
+import os
 
 #list of points added by user
 points = []
@@ -64,7 +65,7 @@ def create_field(background_img, left):
 
 
 if __name__ == "__main__":
-    bg_img = "field.png"
+    bg_img = f"{os.path.dirname(__file__)}\\field.png"
 
     create_field(bg_img, input("Left or right auto (type L or R): ") == "L")
 
@@ -74,7 +75,7 @@ if __name__ == "__main__":
         total_dist += distance(points[i-1], points[i])
 
 
-    print(f"path distance is {int(total_dist * 10)*.1} inches")
+    print(f"path distance is {int(total_dist * 10)/10} inches")
 
     # share points if wanted
     print(points)
