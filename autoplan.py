@@ -1,7 +1,12 @@
-import matplotlib.pyplot as plt
+
+from matplotlib import pyplot as plt
 import matplotlib.image as mpimg
+import matplotlib
 import math
 import os
+
+plt.rcParams["savefig.directory"] = os.path.dirname(__file__)
+
 
 #list of points added by user
 points = []
@@ -10,6 +15,7 @@ points = []
 # can be changed by running program, inputing your path, and copying array from terminal for each side
 ubett_left = [(36, 12), (13, 12), (47, 57)]
 ubett_right = [(108, 12), (72, 44), (93, 44), (91, 56)]
+
 
 # utility distance between points function
 def distance(pt1, pt2):
@@ -45,6 +51,7 @@ def create_field(background_img, left):
     plt.gca().set_aspect('equal', adjustable='box')
     plt.title("Click to set waypoints on the field")
     cid = fig.canvas.mpl_connect('button_press_event', onclick)
+
 
 
     ubett_path = []
