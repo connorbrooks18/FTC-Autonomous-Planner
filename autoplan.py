@@ -69,6 +69,16 @@ def create_field(background_img, left):
     plt.scatter(points[0][0], points[0][1], color="black")
     plt.show()
 
+def generate_path_code(points):
+    code = ""
+    for i in range(len(points)-1):
+        x_diff = points[i+1][0] - points[i][0]
+        y_diff = points[i+1][1] - points[i][1]
+        code += f"// Point {i} to point {i+1}\n"
+        code += f"ad.goToDistanceH(this, {x_diff});\n"
+        code += f"ad.goToDistanceV(this, {y_diff});\n"
+        code += f"\n"
+    return code
 
 
 if __name__ == "__main__":
@@ -85,4 +95,6 @@ if __name__ == "__main__":
     print(f"path distance is {int(total_dist * 10)/10} inches")
 
     # share points if wanted
-    print(points)
+    print(points) if input("Get list of points? (Y/N)").upper() == "Y" else None
+    print(generate_path_code(points)) if input("Generate code without turning? (Y/N)").upper() == "Y" else None
+
