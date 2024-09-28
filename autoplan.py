@@ -75,8 +75,8 @@ def generate_path_code(points):
         x_diff = points[i+1][0] - points[i][0]
         y_diff = points[i+1][1] - points[i][1]
         code += f"// Point {i} to point {i+1}\n"
-        code += f"ad.goToDistanceH(this, {x_diff});\n"
-        code += f"ad.goToDistanceV(this, {y_diff});\n"
+        code += f"ad.strafe(this, {x_diff});\n"
+        code += f"ad.forward(this, {y_diff});\n"
         code += f"\n"
     return code
 
