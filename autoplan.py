@@ -97,4 +97,4 @@ if __name__ == "__main__":
     # share points if wanted
     print(points) if input("Get list of points? (Y/N)").upper() == "Y" else None
     print(generate_path_code(points)) if input("Generate code without turning? (Y/N)").upper() == "Y" else None
-
+    input()
